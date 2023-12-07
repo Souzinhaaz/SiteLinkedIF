@@ -1,5 +1,6 @@
 # SiteLinkedIF
 
-Metas :
+Metas:
 
-- Terminar a estilização da tela de login
+1 - Concluir o corpo html e css da aba de login
+

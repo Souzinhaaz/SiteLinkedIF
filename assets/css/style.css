@@ -166,6 +166,10 @@
     }
 }
 
+foto{
+    width: fit-content;
+}
+
 .header-carousel .owl-nav {
     position: absolute;
     top: 50%;
@@ -197,7 +201,7 @@
 }
 
 .page-header {
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/carousel-1.jpg);
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/IF-BJL-Entrada-MAR-2022.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -369,10 +373,6 @@
     border-color: var(--primary);
 }
 
-.cabeca{
-    width: 100vw;
-    max-height: 40vw;
-}
 
 /*** Footer ***/
 .footer .btn.btn-social {
