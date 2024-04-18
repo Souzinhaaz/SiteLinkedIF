@@ -27,17 +27,25 @@
             <div class="title">Cadastro Aluno</div>
           <form action="materias_para_estudo.php">
             <div class="input-boxes">
-                <div class="input-box">
-                    <i class="fas fa-arrow-right"></i>
-                    <input type="text" placeholder="Nome" required>
-                  </div>
+              <div class="input-box">
+                <i class="fas fa-arrow-right"></i>
+                <input type="text" id="name" name="name" placeholder="Insira seu nome completo" required>
+              </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Insira seu email" required>
+                <input type="email" id="email" name="email" placeholder="Insira seu email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Insira sua senha" required>
+                <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="Insira o seu número de telefone" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-arrow-right"></i>
+                <input type="text" id="cpf" name="cpf" placeholder="insira seu CPF" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Cadastrar">            
