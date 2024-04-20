@@ -15,7 +15,7 @@
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
-        <img src="../../public/img/prof.jpg" alt="">
+        <img src="../../public/img/Imagem do WhatsApp de 2023-12-06 à(s) 18.17.45_069f0f89.jpg" alt="">
       </div>
       <div class="back">
         <img class="backImg" src="../../public/img/backImg.jpg" alt="">
@@ -24,33 +24,40 @@
     <div class="forms">
         <div class="form-content">
           <div class="login-form">
-            <div class="title">Cadastro Docente</div>
-          <form action="materias_para_estudo.php">
+            <div class="title">Cadastro Aluno</div>
+          <form action="../actions/cadastroAluno.php" method="post">
             <div class="input-boxes">
-            <div class="input-box">
+              <div class="input-box">
                 <i class="fas fa-arrow-right"></i>
-                <input type="text" placeholder="Insira seu nome completo " required>
+                <input type="text" id="name" name="name" placeholder="Insira seu nome completo" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Insira seu email" required>
+                <input type="email" id="email" name="email" placeholder="Insira seu email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Insira sua senha" required>
+                <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-phone"></i>
-                <input type="tel" placeholder="Insira o seu número de telefone" required>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="Insira o seu número de telefone" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-arrow-right"></i>
-                <input type="text" placeholder="insira seu CPF" required>
+                <input type="text" id="cpf" name="cpf" placeholder="insira seu CPF" required>
               </div>
+
+              <?php
+              if (isset($_GET['msg'])) {
+                echo $_GET['msg'];
+              }
+              ?>
+
               <div class="button input-box">
-                <input type="submit" value="Cadastrar">
+                <input type="submit" value="Cadastrar">            
               </div>
-              <div class="text sign-up-text">É discente? <a href="cadastro-aluno.php">Cadastrar como aluno</a></div>
+              <div class="text sign-up-text">É docente? <a href="cadProfForm.php">Cadastrar como professor</a></div>
               <div class="text sign-up-text"><a href="../../index.php">Voltar página inicial</a></div>
             </div>
         </form>

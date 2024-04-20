@@ -25,7 +25,7 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="materias_para_estudo.php">
+          <form action="../config/vericationLogin.php" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
@@ -40,7 +40,7 @@
                 <input type="submit" value="Entrar">
                 
               </div>
-              <div class="text sign-up-text">Não tem uma conta ainda? <a href="cadastro-aluno.php">Cadastrar agora</a></div>
+              <div class="text sign-up-text">Não tem uma conta ainda? <a href="cadAlunoForm.php">Cadastrar agora</a></div>
               <div class="text sign-up-text"><a href="../../index.php">Voltar página inicial</a></div>
             </div>
         </form>
