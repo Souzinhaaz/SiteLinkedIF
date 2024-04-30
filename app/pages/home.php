@@ -32,7 +32,9 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="home.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><img src="../../public/img/globo.png" height="60vw"> LinkedIF</h2>
+            <h2 class="m-0 text-primary">
+                <img src="../../public/img/globo.png" height="60vw">LinkedIF
+            </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -40,28 +42,29 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
-                <a href="./../app/pages/cursos.php" class="nav-item nav-link">Cursos</a>
-                <a href="#" class="nav-item nav-link">Contato</a>
+                <a href="cursos.php" class="nav-item nav-link">Cursos</a>
+                <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
             </div>
             <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Entre aqui<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
 
-
     <!-- menuzao Start -->
     <div class="container-fluid p-0 mb-5 page-header bg-primary">
         <div class="owl-carousel-item header-carousel position-relative">
-            <img class="img-fluid" style="visibility: hidden;" src="../../public/img/background.png" alt="">
+            <img  style="visibility: hidden;" src="../../public/img/background.png" alt="">
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                 <div class="container">
                      <div class="row justify-content-start">
                         <div class="col-sm-10 col-lg-8">
-                            <h5 class="text-primary text-uppercase mb-3 ">Venha ser IFBaiano!</h5>
-                            <h1 class="display-3 text-white ">Cursos para o ingresso no IFBaiano</h1>
-                            <p class="fs-5 text-white mb-4 pb-2">Com cursos preparatórios e rápido acesso as documentações de mais importância.</p>
-                            <a href="https://www.ifbaiano.edu.br/unidades/lapa/" target="_blank" class="btn btn-primary py-md-3 px-md-5 me-3 ">Saiba Mais</a>
-                            <a href="login.php" class="btn btn-light py-md-3 px-md-5 ">Entre Agora</a>
+                            <h5 class="text-primary text-uppercase">Venha ser IFBaiano!</h5>
+                            <h1 class="text-white ">Cursos para o ingresso no IFBaiano</h1>
+                            <p class="fs-5 text-white mb-2 pb-2">Com cursos preparatórios e rápido acesso as documentações de mais importância.</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-start">
+                                <a href="https://www.ifbaiano.edu.br/unidades/lapa/" target="_blank" class="btn btn-primary btn-lg me-sm-3 mb-sm-0">Saiba Mais</a>
+                                <a href="login.php" class="btn btn-light btn-lg">Entre Agora</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,7 +121,7 @@
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6" style="min-height: 400px;">
@@ -154,7 +157,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl">
         <div class="container">
             <div class="text-center" >
                 <h6 class="section-title bg-white text-center text-primary px-3">Desenvolvedores</h6>
@@ -268,35 +271,26 @@
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow " data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col">
                         <h4 class="text-white mb-3">Links</h4>
                         <a class="btn btn-link" href="">Sobre Nós</a>
                         <a class="btn btn-link" href="">Nos Contate</a>
                         <a class="btn btn-link" href="">FAQs e Ajuda</a>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col">
                         <h4 class="text-white mb-3">Contact</h4>
-                        <!--<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>-->
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>77 9 12345678</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>projetolinkedif@gmail.com</p>
                         <div class="d-flex pt-2">
-                            <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>-->
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                            <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>-->
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 final">
-                        <img src="../../public/img/logo.png" alt="Logo" class="img-fluid">
                     </div>
                     
                 <div class="container">
                     <div class="copyright">
                         <div class="row">
                             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                
-
                                 Designed By <a class="border-bottom" href="home.php">Gustavo de Souza, Keyla Rodrigues, Noemi Santos, Pedro Augusto, Riquele Maicana e Shayara Mary</a>
                             </div>
                             <div class="col-md-6 text-center text-md-end">
