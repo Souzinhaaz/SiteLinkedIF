@@ -51,9 +51,9 @@
     <!-- Navbar End -->
 
     <!-- menuzao Start -->
-    <div class="container-fluid p-0 mb-5 page-header bg-primary">
+    <div class="container-fluid p-0 mb-5 page-header bg-primary" style="overflow-x: hidden;">
         <div class="owl-carousel-item header-carousel position-relative">
-            <img  style="visibility: hidden;" src="../../public/img/background.png" alt="">
+            <img style="visibility: hidden;" src="../../public/img/background.png" alt="">
             <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                 <div class="container">
                      <div class="row justify-content-start">
