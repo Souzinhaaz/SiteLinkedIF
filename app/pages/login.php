@@ -25,21 +25,25 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-          <form action="../config/vericationLogin.php" method="post">
+          <form action="../actions/verificationLogin.php" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="email" placeholder="Insira seu email" required>
+                <input type="email" id="email" name="email" placeholder="Insira seu email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Insira sua senha" required>
+                <input type="password" id="password" name="password" placeholder="Insira sua senha" required>
               </div>
               <div class="text"><a href="#">Esqueceu a senha?</a></div>
               <div class="button input-box">
                 <input type="submit" value="Entrar">
-                
               </div>
+              <?php
+                if (isset($_GET['msg'])) {
+                  echo $_GET['msg'];
+                }
+              ?>
               <div class="text sign-up-text">Não tem uma conta ainda? <a href="cadAlunoForm.php">Cadastrar agora</a></div>
               <div class="text sign-up-text"><a href="../../index.php">Voltar página inicial</a></div>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-define("host", "localhost");
+define("host", "127.0.0.1:5555");
 define("user", "root");
 define("password", "");
 define("db", "linkedif");
@@ -12,9 +12,7 @@ function connect() {
     $mysqli = new mysqli(host, user, password, db);
     if ($mysqli->connect_errno) { 
         echo "Erro ao conectar como o banco". $mysqli->connect_error;
-    } else {
-        echo "Conexão feita com sucesso!";
-    }
+    } 
 }
 
 function close() {

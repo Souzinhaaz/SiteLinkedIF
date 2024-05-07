@@ -8,17 +8,15 @@ $msg;
 if (empty($_POST['name'])) {
     $msg = "Preencha o campo do nome";
 } else if (empty($_POST['email'])) {
-    $msg = "Por favor, preencha o campo do email";
-    if (verificarEmail($_POST['email'], "id_professor", "professores")) {
-        $msg = "Email já cadastrado. Por favor, informe outro endereço de Email";
-    }
-
+    $msg = "Por favor, preencha o campo do email"; 
 } else if (empty($_POST['password'])) {
     $msg = "Por favor, insira a sua senha";
 } else if (empty($_POST['phone-number'])) {
     $msg = "Por favor, insira o seu número de telefone";
 } else if (empty($_POST['cpf'])) {
     $msg = "Por favor, insira o seu número de CPF";
+} else if (verificarEmail($_POST['email'])) {
+    $msg = "Email já cadastrado. Por favor, informe outro endereço de Email";
 } else {
 
     $nome = $_POST['name'];
