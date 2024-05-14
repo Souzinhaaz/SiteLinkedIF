@@ -16,12 +16,9 @@ if (empty($_POST['email'])) {
     
 
     if (verificarEmail($email)) {
-        if(verificarSenha($email, $password)) {
-            echo "Passou senha";
-            header("Location: ../pages/cursos.php?msg={$msg}");
-        };
-    } else {
-        $msg = "Usuario ou senha estao incorretos.";
+        if (verificarSenha($email, $senha) {
+            header("Location: ../pages/cursos.php?msg={$msg}")
+        })
     };
 
 }

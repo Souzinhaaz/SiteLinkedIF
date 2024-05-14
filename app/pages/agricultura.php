@@ -33,7 +33,9 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="../../index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><img src="../../public/img/globo.png" height="60vw"> LinkedIF</h2>
+            <h2 class="m-0 text-primary d-flex align-items-center gap-2">
+              <img src="../../public/img/globo.png" height="60vw"> LinkedIF
+            </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -86,42 +88,39 @@
             </div>
         </div>
     </div>
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow " data-wow-delay="0.1s">
+     <!-- Footer Start -->
+     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow " data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Links</h4>
-                    <a class="btn btn-link" href="">Sobre Nós</a>
-                    <a class="btn btn-link" href="">Nos Contate</a>
-                    <a class="btn btn-link" href="">FAQs e Ajuda</a>
-                </div>
-                <div class="col-lg-3 col-md-6 final">
-                    <h4 class="text-white mb-3">Contatos</h4>
-                    <!--<p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>-->
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>77 9 12345678</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>projetolinkedif@gmail.com</p>
-                    <div class="d-flex pt-2">
-                        <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>-->
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <!--<a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>-->
+                    <div class="col">
+                        <h4 class="text-white mb-3">Links</h4>
+                        <a class="btn btn-link" href="">Sobre Nós</a>
+                        <a class="btn btn-link" href="">Nos Contate</a>
+                        <a class="btn btn-link" href="">FAQs e Ajuda</a>
                     </div>
-                </div>
-                
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        
-
-                        Designed By <a class="border-bottom" href="agricultura.php">Gustavo de Souza, Keyla Rodrigues, Noemi Santos, Pedro Augusto, Riquele Maicana e Shayara Mary</a>
+                    <div class="col">
+                        <h4 class="text-white mb-3">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>77 9 12345678</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>projetolinkedif@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Suporte</a>
-                            <a href="">FAQs</a>
+                    
+                <div class="container">
+                    <div class="copyright">
+                        <div class="row">
+                            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                                Designed By <a class="border-bottom" href="home.php">Gustavo de Souza, Keyla Rodrigues, Noemi Santos, Pedro Augusto, Riquele Maicana e Shayara Mary</a>
+                            </div>
+                            <div class="col-md-6 text-center text-md-end">
+                                <div class="footer-menu">
+                                    <a href="">Home</a>
+                                    <a href="">Suporte</a>
+                                    <a href="">FAQs</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,7 +128,6 @@
         </div>
     </div>
     <!-- Footer End -->
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
