@@ -216,3 +216,25 @@ body{
     display: none;
   }
 }
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.back-login .input-box a button {
+  min-width: 120px;
+  color: #fff;
+  background: green;
+  border-radius: 6px;
+  font-size: 17px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.back-login .input-box a button:hover {
+  background: rgb(0, 109, 0);
+}
