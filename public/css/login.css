@@ -110,6 +110,9 @@ body{
   font-weight: 500;
   color: #333;
 }
+.forms .form-content .login-form .form-header {
+  display: flex;
+}
 .forms .form-content .title:before{
   content: '';
   position: absolute;
@@ -133,7 +136,7 @@ body{
   margin: 10px 0;
   position: relative;
 }
-.form-content .input-box input{
+.form-content .input-box input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -169,7 +172,7 @@ body{
   color: #fff;
   margin-top: 40px;
 }
-.forms .form-content .button input{
+.forms .form-content .button input, .title .button a button{
   color: #fff;
   background: green;
   border-radius: 6px;

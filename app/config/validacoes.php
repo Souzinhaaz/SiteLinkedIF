@@ -1,19 +1,21 @@
 <?php
 
-
-
 require_once("connectDB.php");
 
 // Função que verifica se o email já foi cadastrado
 // Retorna true caso já exista uma pessoa cadastrada com o email informado
-
 function verificarEmail($email) {
     global $mysqli;
 
     connect();
-    $sql = "SELECT email FROM alunos WHERE email = ?;";
+    // query sql para buscar o email no banco de dados do aluno.
+    $sql_alunos = "SELECT email FROM alunos WHERE email = ?;";
 
-    $stmt = $mysqli->prepare($sql);
+    // preparando a query sql para executar.
+    $stmt = $mysqli->prepare($sql_alunos);
+    if (!$stmt) {
+        die("Erro ao buscar o aluno, Problema no acesso ao banco de dados");
+    }
     $stmt->bind_param("s", $email);
     $stmt->execute();
 
@@ -21,9 +23,12 @@ function verificarEmail($email) {
     $num_rows = $return->num_rows;
 
     if ($num_rows == 0) {
-        $sql = "SELECT email FROM professores WHERE email = ?;";
+        $sql_professores = "SELECT email FROM professores WHERE email = ?;";
 
-        $stmt = $mysqli->prepare($sql);
+        $stmt = $mysqli->prepare($sql_professores);
+        if (!$stmt) {
+            die("Erro ao buscar o professor, Problema no acesso ao banco de dados");
+        }
         $stmt->bind_param("s", $email);
         $stmt->execute();
 
@@ -34,15 +39,16 @@ function verificarEmail($email) {
 
     close();
 
+    // Se o número de linhas encontradas for igual a 1 vai retornar true, senão false.
     return $return->num_rows == 1 ? true : false;
 }
 
-
+// Função que verifica se a senha oferecida bate com a da pessoa do email.
+// Retorna true se o email e a senha baterem.
 function verificarSenha($email, $senha) {
     global $mysqli;
 
     connect();
-
     // Verifica na tabela de alunos
     $sql_alunos = "SELECT senha FROM alunos WHERE email = ?;";
     $stmt = $mysqli->prepare($sql_alunos);
