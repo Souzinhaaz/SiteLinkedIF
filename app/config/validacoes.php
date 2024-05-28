@@ -39,6 +39,10 @@ function verificarEmail($email) {
 
     close();
 
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    
     // Se o número de linhas encontradas for igual a 1 vai retornar true, senão false.
     return $return->num_rows == 1 ? true : false;
 }
@@ -68,12 +72,15 @@ function verificarSenha($email, $senha) {
         if ($result_professores->num_rows == 1) {
             $row = $result_professores->fetch_assoc();
             $hashed_password = $row['senha'];
-            echo "<br>";
-            echo var_dump($senha);
-            echo "<br>";
-            echo var_dump($hashed_password);
             // Verifica se a senha fornecida corresponde ao hash no banco de dados
             if (password_verify($senha, $hashed_password)) {
+                if (!isset($_SESSION)) {
+                    session_start();
+                }
+
+                $_SESSION['id'] = $row["id_professor"];
+                $_SESSION['name'] = $row["nome"];
+
                 close();
                 return true;
             }
