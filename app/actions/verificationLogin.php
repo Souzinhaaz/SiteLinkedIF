@@ -1,23 +1,31 @@
 <?php
-
+session_start();
 require_once("../config/connectDB.php");
 require_once("../config/validacoes.php");
 
 $msg;
+    
+// Essa função retira os espaços em branco, retira as barras invertidas e muda
+// os caracteres especiais html.
+function validate($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
-if (empty($_POST['email'])) {
+$email = validate($_POST['email']);
+$password = validate($_POST['password']);
+
+if (empty($email)) {
     $msg = "O campo email esta vazio.";
-} else if (empty($_POST["password"])) {
+} else if (empty($password)) {
     $msg = "O campo da senha esta vazio";
 } else {
 
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    
-
     if (verificarEmail($email)) {
         if(verificarSenha($email, $password)) {
-            echo "Passou senha";
+            $msg = "Usuário Logado com sucesso";
             header("Location: ../pages/cursos.php?msg={$msg}");
         };
     } else {

@@ -62,6 +62,10 @@ function verificarSenha($email, $senha) {
         if ($result_professores->num_rows == 1) {
             $row = $result_professores->fetch_assoc();
             $hashed_password = $row['senha'];
+            echo "<br>";
+            echo var_dump($senha);
+            echo "<br>";
+            echo var_dump($hashed_password);
             // Verifica se a senha fornecida corresponde ao hash no banco de dados
             if (password_verify($senha, $hashed_password)) {
                 close();
@@ -72,6 +76,11 @@ function verificarSenha($email, $senha) {
         // Se encontrado na tabela de alunos, verifica a senha
         $row = $result_alunos->fetch_assoc();
         $hashed_password = $row['senha'];
+        echo var_dump($senha);
+        echo "<br>";
+        echo var_dump($hashed_password);
+        echo "<br>";
+        echo var_dump(password_verify($senha, $hashed_password));
         // Verifica se a senha fornecida corresponde ao hash no banco de dados
         if (password_verify($senha, $hashed_password)) {
             close();
