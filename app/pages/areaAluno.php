@@ -1,6 +1,6 @@
 <?php
 
-include("../config/protect.php");
+include('../config/protect.php');
 
 ?>
 
@@ -43,25 +43,25 @@ include("../config/protect.php");
       </h2>
     </a>
 
-    <h2 class="m-0 text-primary d-flex align-items-center gap-2">
-    <?php
-        if (isset($_SESSION['name'])) {
-          echo "Seja bem-vindo, " . $_SESSION['name'];
-        } else {
-          echo "Bem-vindo, visitante!";
-        }
-    ?>
-    </h2>
+    <h3 class="m-0 text-primary d-flex align-items-center m-3">
+      <?php
+          if (isset($_SESSION['name'])) {
+            echo "Seja bem-vindo, " . $_SESSION['name'];
+          } else {
+            echo "Bem-vindo, visitante!";
+          }
+      ?>
+    </h3>
 
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <button type="button" class="navbar-toggler m-2" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
+        <a href="home.php" class="nav-item nav-link">Pagina Inicial</a>
         <a href="cursos.php" class="nav-item nav-link">Cursos</a>
         <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
-        <a href="../actions/logOut.php" class="nav-item nav-link">Sair<i class="fa fa-arrow-right ms-3"></i></a>
+        <a href="../config/logOut.php" class="nav-item nav-link">Sair<i class="fa fa-arrow-right ms-3"></i></a>
       </div>
     </div>
   </nav>

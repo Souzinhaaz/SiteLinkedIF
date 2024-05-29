@@ -1,6 +1,6 @@
 <?php 
 
-include("../actions/logIn.php");
+require_once("../config/loggedIn.php");
 
 ?>
 

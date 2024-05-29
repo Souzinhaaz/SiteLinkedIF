@@ -1,7 +1,7 @@
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
+
+include("../config/protect.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@ if (!isset($_SESSION)) {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
+                <a href="home.php" class="nav-item nav-link">Pagina Inicial</a>
                 <?php
                     if (isset($_SESSION['id'])) {
                         echo "<a href='areaAluno.php' class='nav-item nav-link'>Área do Aluno</a>";
@@ -58,7 +58,7 @@ if (!isset($_SESSION)) {
                 <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
                 <?php
                     if (isset($_SESSION['id'])) {
-                        echo "<a href='../actions/logOut.php' class='nav-item nav-link'>Sair<i class='fa fa-arrow-right ms-3'></i></a>";
+                        echo "<a href='../config/logOut.php' class='nav-item nav-link'>Sair<i class='fa fa-arrow-right ms-3'></i></a>";
                     } else {
                         echo "<a href='login.php' class='btn btn-primary nav-item nav-link text-white px-3 me-0 d-flex align-items-center'>Entre aqui<i class='fa fa-arrow-right ms-3'></i></a>
                         </div>";
