@@ -1,11 +1,16 @@
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="utf-8">
-  <title>LinkedIF</title>
+  <title>Linkedif</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <!-- Favicon -->
   <link href="../../public/img/globo.png" rel="icon">
 
@@ -27,123 +32,87 @@
 
   <!-- Template Stylesheet -->
   <link href="../../public/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
   <!-- Navbar Start -->
   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="../../index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+    <a href="home.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
       <h2 class="m-0 text-primary d-flex align-items-center gap-2">
         <img src="../../public/img/globo.png" height="60vw"> LinkedIF
       </h2>
     </a>
+
+    <div class="message-profile">
+      <h3 class="m-0 text-primary d-flex align-items-center gap-2">
+        <?php
+        if (isset($_SESSION['name'])) {
+          echo "Seja bem-vindo, " . $_SESSION['name'];
+        } else {
+          echo "Bem-vindo, visitante!";
+        }
+        ?>
+      </h3>
+    </div>
+
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav ms-auto p-4 p-lg-0">
-        <a href="../../index.php" class="nav-item nav-link">Pagina Inicial</a>
-        <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Paginas</a>
-          <div class="dropdown-menu fade-down m-0">
-            <a href="#" class="dropdown-item">Nossa equipe</a>
-          </div>
-        </div>
-        <a href="#" class="nav-item nav-link">Contatos</a>
+        <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
+        <a href="cursos.php" class="nav-item nav-link">Cursos</a>
+        <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
       </div>
       <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Entre aqui<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
   </nav>
   <!-- Navbar End -->
 
-  <!-- Header Start -->
-  <div class="container-fluid bg-primary py-5 mb-5 page-header">
-    <div class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center">
-          <h1 class="display-3 text-white">Cursos</h1>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb justify-content-center">
-              <li class="breadcrumb-item"><a class="text-white" href="../../index.php">Menu</a></li>
-              <li class="breadcrumb-item"><a class="text-white" href="#">Paginas</a></li>
-            </ol>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Header End -->
-
-
-  <!-- Courses Start -->
+  <!-- Opções Start -->
   <div class="container-xxl py-5">
     <div class="container">
-      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-        <h6 class="section-title bg-white text-center text-primary px-3">Cursos</h6>
-        <h1 class="mb-5">Cursos Disponiveis</h1>
-      </div>
-      <div class="row g-4 justify-content-center">
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="course-item bg-light">
-            <div class="position-relative overflow-hidden">
-              <img class="img-fluid" src="../../public/img/curso-info.jpg" alt="">
-              <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                <a href="informatica.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Leia Mais</a>
-              </div>
-            </div>
-            <div class="text-center p-4 pb-0">
-              <h3 class="mb-0">Informática</h3>
-              <h5 class="mb-4">Curso Técnico Integrado</h5>
-            </div>
-            <div class="d-flex border-top">
-              <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>40 Ingressantes</small>
+      <div class="row g-4">
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-item text-center pt-3">
+            <div class="p-4">
+              <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+              <h5 class="mb-3">Instrutores Qualificados</h5>
+              <p>Matériais produzidos de alunos para alunos, com o auxilio dos professores do institutuo</p>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="course-item bg-light">
-            <div class="position-relative overflow-hidden">
-              <img class="img-fluid" src="../../public/img/curso-agri.jpg" alt="">
-              <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                <a href="agricultura.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Leia Mais</a>
-              </div>
-            </div>
-            <div class="text-center p-4 pb-0">
-              <h3 class="mb-0">Agricultura</h3>
-              <h5 class="mb-4">Curso Técnico Integrado</h5>
-            </div>
-            <div class="d-flex border-top">
-              <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>40 Ingressantes</small>
-
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-item text-center pt-3">
+            <div class="p-4">
+              <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+              <h5 class="mb-3">Aulas Online</h5>
+              <p>Aulas ministradas por professores qualificados na área e com total suporte aos alunos.</p>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-          <div class="course-item bg-light">
-            <div class="position-relative overflow-hidden">
-              <img class="img-fluid" src="../../public/img/curso-agro.jpg" alt="">
-              <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                <a href="agroecologia.php" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 30px 30px 30px 30px;">Leia Mais</a>
-              </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-item text-center pt-3">
+            <div class="p-4">
+              <i class="fa fa-3x fa-home text-primary mb-4"></i>
+              <h5 class="mb-3">Projetos Principais</h5>
+              <p>Ajudar os alunos a ingressar no IF Baiano, tornando de facil entendimento os editais disponibilizados.</p>
             </div>
-            <div class="text-center p-4 pb-0">
-              <h3 class="mb-0">Agroecologia</h3>
-              <h5 class="mb-4">Curso Técnico Integrado</h5>
-            </div>
-            <div class="d-flex border-top">
-              <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>40 Ingressantes</small>
-
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="service-item text-center pt-3">
+            <div class="p-4">
+              <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+              <h5 class="mb-3">Biblioteca de Conteúdos</h5>
+              <p>Disponibilização dos principais editais sobre o IFBaiano e sobre a inscrição.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Courses End -->
-
+  <!-- Opções End -->
 
   <!-- Footer Start -->
   <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow " data-wow-delay="0.1s">
@@ -169,7 +138,7 @@
           <div class="copyright">
             <div class="row">
               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                Designed By <a class="border-bottom" href="home.php">Gustavo de Souza, Keyla Rodrigues, Noemi Santos, Pedro Augusto, Riquele Maicana e Shayara Mary</a>
+                Designed By <a class="border-bottom" href="areaAluno.php">Gustavo de Souza, Keyla Rodrigues, Noemi Santos, Pedro Augusto, Riquele Maicana e Shayara Mary</a>
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-menu">
@@ -188,7 +157,6 @@
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

@@ -30,10 +30,6 @@
             <div class="title">
               Cadastro Aluno
             </div>
-
-<<<<<<< HEAD
-            
-=======
             <div class="back-login">
               <div class="input-box">
                 <a href="login.php">
@@ -41,7 +37,6 @@
                 </a>
               </div>
             </div>
->>>>>>> 5a0456c6767eba919589829075bb7d4f7f157bce
           </div>
           <form action="../actions/cadastroAluno.php" method="post">
             <div class="input-boxes">

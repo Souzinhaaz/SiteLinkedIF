@@ -2,9 +2,14 @@
 
 require_once("connectDB.php");
 
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 // Função que verifica se o email já foi cadastrado
 // Retorna true caso já exista uma pessoa cadastrada com o email informado
-function verificarEmail($email) {
+function verificarEmail($email)
+{
     global $mysqli;
 
     connect();
@@ -33,28 +38,25 @@ function verificarEmail($email) {
         $stmt->execute();
 
         $return = $stmt->get_result();
-    
+
         $num_rows = $return->num_rows;
     }
 
     close();
 
-    if (!isset($_SESSION)) {
-        session_start();
-    }
-    
     // Se o número de linhas encontradas for igual a 1 vai retornar true, senão false.
     return $return->num_rows == 1 ? true : false;
 }
 
 // Função que verifica se a senha oferecida bate com a da pessoa do email.
 // Retorna true se o email e a senha baterem.
-function verificarSenha($email, $senha) {
-    global $mysqli;
+function verificarSenha($email, $senha)
+{
+   global $mysqli;
 
     connect();
     // Verifica na tabela de alunos
-    $sql_alunos = "SELECT senha FROM alunos WHERE email = ?;";
+    $sql_alunos = "SELECT nome, senha FROM alunos WHERE email = ?;";
     $stmt = $mysqli->prepare($sql_alunos);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -62,7 +64,7 @@ function verificarSenha($email, $senha) {
 
     // Se o email não for encontrado na tabela de alunos, verifique na tabela de professores
     if ($result_alunos->num_rows == 0) {
-        $sql_professores = "SELECT senha FROM professores WHERE email = ?;";
+        $sql_professores = "SELECT nome, senha FROM professores WHERE email = ?;";
         $stmt = $mysqli->prepare($sql_professores);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -74,13 +76,7 @@ function verificarSenha($email, $senha) {
             $hashed_password = $row['senha'];
             // Verifica se a senha fornecida corresponde ao hash no banco de dados
             if (password_verify($senha, $hashed_password)) {
-                if (!isset($_SESSION)) {
-                    session_start();
-                }
-
-                $_SESSION['id'] = $row["id_professor"];
                 $_SESSION['name'] = $row["nome"];
-
                 close();
                 return true;
             }
@@ -89,13 +85,10 @@ function verificarSenha($email, $senha) {
         // Se encontrado na tabela de alunos, verifica a senha
         $row = $result_alunos->fetch_assoc();
         $hashed_password = $row['senha'];
-        echo var_dump($senha);
-        echo "<br>";
-        echo var_dump($hashed_password);
-        echo "<br>";
-        echo var_dump(password_verify($senha, $hashed_password));
+
         // Verifica se a senha fornecida corresponde ao hash no banco de dados
         if (password_verify($senha, $hashed_password)) {
+            $_SESSION['name'] = $row["nome"];
             close();
             return true;
         }
