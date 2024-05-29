@@ -25,7 +25,9 @@ if (empty($email)) {
     $msg = "O campo da senha está vazio";
 } else {
     if (verificarEmail($email)) {
+        echo "Passou da parte de verificar email";
         if(verificarSenha($email, $password)) {
+            echo "Passou da parte de verificar senha";
             $msg = "Usuário Logado com sucesso";
             header("Location: ../pages/areaAluno.php?msg={$msg}");
             exit(); // Certifique-se de sair após redirecionar

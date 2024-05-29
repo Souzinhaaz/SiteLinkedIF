@@ -52,11 +52,11 @@ function verificarEmail($email)
 // Retorna true se o email e a senha baterem.
 function verificarSenha($email, $senha)
 {
-   global $mysqli;
+    global $mysqli;
 
     connect();
     // Verifica na tabela de alunos
-    $sql_alunos = "SELECT nome, senha FROM alunos WHERE email = ?;";
+    $sql_alunos = "SELECT id_aluno, nome, senha FROM alunos WHERE email = ?;";
     $stmt = $mysqli->prepare($sql_alunos);
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -64,7 +64,7 @@ function verificarSenha($email, $senha)
 
     // Se o email não for encontrado na tabela de alunos, verifique na tabela de professores
     if ($result_alunos->num_rows == 0) {
-        $sql_professores = "SELECT nome, senha FROM professores WHERE email = ?;";
+        $sql_professores = "SELECT id_professor, nome, senha FROM professores WHERE email = ?;";
         $stmt = $mysqli->prepare($sql_professores);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -72,10 +72,12 @@ function verificarSenha($email, $senha)
 
         // Se encontrado na tabela de professores, verifica a senha
         if ($result_professores->num_rows == 1) {
+            echo "Entrou na tabela de professores";
             $row = $result_professores->fetch_assoc();
             $hashed_password = $row['senha'];
             // Verifica se a senha fornecida corresponde ao hash no banco de dados
             if (password_verify($senha, $hashed_password)) {
+                $_SESSION['id'] = $row["id_professor"];
                 $_SESSION['name'] = $row["nome"];
                 close();
                 return true;
@@ -88,7 +90,9 @@ function verificarSenha($email, $senha)
 
         // Verifica se a senha fornecida corresponde ao hash no banco de dados
         if (password_verify($senha, $hashed_password)) {
+            $_SESSION['id'] = $row["id_aluno"];
             $_SESSION['name'] = $row["nome"];
+            echo "Entrou nessa parte";
             close();
             return true;
         }

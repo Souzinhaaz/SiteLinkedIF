@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,9 +39,9 @@
 <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="../../index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="home.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary d-flex align-items-center gap-2">
-              <img src="../../public/img/globo.png" height="60vw"> LinkedIF
+                <img src="../../public/img/globo.png" height="60vw"> LinkedIF
             </h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -43,16 +49,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="../../index.php" class="nav-item nav-link">Pagina Inicial</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Paginas</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="#" class="dropdown-item">Nossa equipe</a>
-                    </div>
-                </div>
-                <a href="#" class="nav-item nav-link">Contatos</a>
-            </div>
-            <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Entre aqui<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
+                <?php
+                    if (isset($_SESSION['id'])) {
+                        echo "<a href='areaAluno.php' class='nav-item nav-link'>Área do Aluno</a>";
+                    }
+                ?>
+                <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
+                <?php
+                    if (isset($_SESSION['id'])) {
+                        echo "<a href='../actions/logOut.php' class='nav-item nav-link'>Sair<i class='fa fa-arrow-right ms-3'></i></a>";
+                    } else {
+                        echo "<a href='login.php' class='btn btn-primary nav-item nav-link text-white px-3 me-0 d-flex align-items-center'>Entre aqui<i class='fa fa-arrow-right ms-3'></i></a>
+                        </div>";
+                    }
+                ?>
         </div>
     </nav>
     <!-- Navbar End -->

@@ -1,3 +1,9 @@
+<?php 
+
+include("../actions/logIn.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>

@@ -22,7 +22,7 @@ if (empty($_POST['name'])) {
     $nome = $_POST['name'];
     $email = $_POST['email'];
     $telefone = $_POST['phone-number'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);   
+    $senha = password_hash($_POST['password'], PASSWORD_DEFAULT);   
     $cpf = $_POST['cpf'];
 
     connect();

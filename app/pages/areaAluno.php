@@ -1,7 +1,7 @@
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
+
+include("../config/protect.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -43,17 +43,15 @@ if (!isset($_SESSION)) {
       </h2>
     </a>
 
-    <div class="message-profile">
-      <h3 class="m-0 text-primary d-flex align-items-center gap-2">
-        <?php
+    <h2 class="m-0 text-primary d-flex align-items-center gap-2">
+    <?php
         if (isset($_SESSION['name'])) {
           echo "Seja bem-vindo, " . $_SESSION['name'];
         } else {
           echo "Bem-vindo, visitante!";
         }
-        ?>
-      </h3>
-    </div>
+    ?>
+    </h2>
 
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
@@ -63,8 +61,8 @@ if (!isset($_SESSION)) {
         <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
         <a href="cursos.php" class="nav-item nav-link">Cursos</a>
         <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
+        <a href="../actions/logOut.php" class="nav-item nav-link">Sair<i class="fa fa-arrow-right ms-3"></i></a>
       </div>
-      <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Entre aqui<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
   </nav>
   <!-- Navbar End -->

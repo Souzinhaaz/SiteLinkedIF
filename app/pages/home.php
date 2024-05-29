@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -42,10 +48,20 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="#" class="nav-item nav-link active">Pagina Inicial</a>
-                <a href="cursos.php" class="nav-item nav-link">Cursos</a>
+                <?php
+                    if (isset($_SESSION['id'])) {
+                        echo "<a href='cursos.php' class='nav-item nav-link'>Cursos</a>";
+                    }
+                ?>
                 <a href="https://wa.me/557799155669" target="_blank" class="nav-item nav-link">Contato</a>
-            </div>
-            <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Entre aqui<i class="fa fa-arrow-right ms-3"></i></a>
+                <?php
+                    if (isset($_SESSION['id'])) {
+                        echo "<a href='../actions/logOut.php' class='nav-item nav-link'>Sair<i class='fa fa-arrow-right ms-3'></i></a>";
+                    } else {
+                        echo "<a href='login.php' class='btn btn-primary nav-item nav-link text-white px-3 me-0 d-flex align-items-center'>Entre aqui<i class='fa fa-arrow-right ms-3'></i></a>
+                        </div>";
+                    }
+                ?>
         </div>
     </nav>
     <!-- Navbar End -->
