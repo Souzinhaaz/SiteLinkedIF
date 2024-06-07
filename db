@@ -1,0 +1,80 @@
+CREATE DATABASE linkedif;
+
+USE linkedif;
+
+CREATE TABLE alunos (
+    id_aluno int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    email varchar(50) not null unique,
+    telefone varchar(30) not null,
+    senha varchar(30) not null,
+    CPF varchar(30) not null unique 
+);
+
+CREATE TABLE professores (
+	id_professor int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    email varchar(50) not null unique,
+    telefone varchar(30) not null,
+    senha varchar(30) not null,
+    CPF varchar(30) not null unique
+);
+
+
+CREATE TABLE administradores (
+    id_admin int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(50) not null,
+    senha varchar(30) not null,
+    telefone varchar(30) not null,
+    email varchar(50) not null unique,
+    CPF varchar(30) not null unique 
+);
+
+CREATE TABLE categorias (
+    id_categoria int PRIMARY KEY AUTO_INCREMENT,
+    nome varchar(40) not null
+);
+
+CREATE TABLE disciplinas (
+    id_disciplina int PRIMARY KEY AUTO_INCREMENT,
+    descricao text,
+    nome varchar(40) not null
+);
+
+CREATE TABLE comentarios (
+    id_comentario INT PRIMARY KEY AUTO_INCREMENT,
+    texto TEXT not null,
+    data_modificacao DATE not null,
+    alunos_id_aluno INT,
+    administradores_id_admin INT,
+    professor_id_professor INT,
+    FOREIGN KEY(alunos_id_aluno) REFERENCES alunos(id_aluno),
+    FOREIGN KEY(professor_id_professor) REFERENCES professores(id_professor),
+	FOREIGN	KEY(administradores_id_admin) REFERENCES administradores(id_admin)
+);  
+
+CREATE TABLE material_didatico (
+    id_material int PRIMARY KEY AUTO_INCREMENT,
+    data_modificacao date not null,
+    descricao text not null,
+    nome varchar(40) not null,
+    categorias_id_categoria INT not null,
+    FOREIGN KEY(categorias_id_categoria) REFERENCES categorias(id_categoria)
+);
+
+CREATE TABLE documentos (
+    id_documento int PRIMARY KEY AUTO_INCREMENT,
+	nome varchar(40) not null,
+    descricao text not null,
+    data_modificacao date not null,
+    categorias_id_categoria INT not null,
+    FOREIGN KEY (categorias_id_categoria) REFERENCES categorias(id_categoria)
+);
+
+CREATE TABLE pertence (
+    disciplinas_id_categoria int not null,
+    material_didatico_id_material INT not null,
+    PRIMARY KEY(disciplinas_id_categoria,material_didatico_id_material),
+    FOREIGN KEY(disciplinas_id_categoria) REFERENCES disciplinas(id_categoria),
+	FOREIGN KEY(material_didatico_id_material) REFERENCES material_didatico(id_material)
+);
