@@ -71,10 +71,3 @@ CREATE TABLE documentos (
     FOREIGN KEY (categorias_id_categoria) REFERENCES categorias(id_categoria)
 );
 
-CREATE TABLE pertence (
-    disciplinas_id_categoria int not null,
-    material_didatico_id_material INT not null,
-    PRIMARY KEY(disciplinas_id_categoria,material_didatico_id_material),
-    FOREIGN KEY(disciplinas_id_categoria) REFERENCES disciplinas(id_categoria),
-	FOREIGN KEY(material_didatico_id_material) REFERENCES material_didatico(id_material)
-);
